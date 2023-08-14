@@ -1,0 +1,6 @@
+{"boss":{
+    "host": "mdb-sigv-np-ch.mariadb.database.azure.com",
+    "user": "EDIuser",
+    "password": "nOLcttJ5nTpgSljjk2dKjqU+MXf9dLmLuh8OSJT/lME=",
+    "db":"chaiedi"
+}}
