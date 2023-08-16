@@ -5,6 +5,7 @@ import uvicorn
 from Crypto.Cipher import AES
 from Crypto.Hash import SHA256
 from fastapi import FastAPI, WebSocket
+from fastapi.middleware.cors import CORSMiddleware
 
 with open("sql_config.json", "r") as f:
     config = json.load(f)
@@ -22,6 +23,14 @@ def decrypt(source):
     return data[:-padding].decode("utf8")
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # adjust this to your needs
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 def kh_sit_flow():
     connect = pymysql.connect(
